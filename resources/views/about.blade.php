@@ -1,7 +1,11 @@
-<h1>О блоге</h1>
-<p>Эксперименты с Laravel на Хекслете</p>
-<ol>
-@foreach ($tags as $tag)
-    <li>{{ $tag }}</li>
-@endforeach
-</ol>
+<html>
+    <head>
+        <title>Hexlet Blog - @yield('title')</title>
+        @include('shared.metatags')
+    </head>
+    <body>
+        <div class="container">
+            @yield('content')
+        </div>
+    </body>
+</html>
