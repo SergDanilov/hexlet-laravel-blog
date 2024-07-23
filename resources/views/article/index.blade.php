@@ -8,10 +8,10 @@
     @endforeach
 @endsection
 <h2>Создать статью</h2>
-{!! Form::model($article, ['route' => 'articles.store']) !!}
-    {!! Form::label('name', 'Имя') !!}
-    {!! Form::text('name') !!}
-    {!! Form::label('body', 'Содержание') !!}
-    {!! Form::textarea('body') !!}
-    {!! Form::submit('Создать') !!}
-{!! Form::close() !!}
+{{ html()->modelForm($article, 'POST', route('articles.store'))->open() }}
+    {{  html()->label('Имя', 'name') }}
+    {{  html()->input('text', 'name') }}
+    {{  html()->label('Содержание', 'body') }}
+    {{  html()->textarea('body') }}
+    {{ html()->submit('Создать') }}
+{{ html()->closeModelForm() }}
