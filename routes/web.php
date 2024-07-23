@@ -16,3 +16,6 @@ Route::get('articles/create', 'ArticleController@create')
 
 Route::get('articles', [ArticleController::class, 'index'])
   ->name('articles.index');
+
+Route::post('articles', 'ArticleController@store')
+  ->name('articles.store');
