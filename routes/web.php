@@ -10,3 +10,6 @@ Route::get('about', function () {
     $tags = ['обучение', 'программирование', 'php', 'oop'];
     return view('about', ['tags' => $tags]);
 });
+
+Route::get('articles/create', 'ArticleController@create')
+  ->name('articles.create');
