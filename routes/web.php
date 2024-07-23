@@ -13,3 +13,6 @@ Route::get('about', function () {
 
 Route::get('articles/create', 'ArticleController@create')
   ->name('articles.create');
+
+Route::get('articles', [ArticleController::class, 'index'])
+  ->name('articles.index');
