@@ -14,4 +14,11 @@ class ArticleController extends Controller
         // compact('articles') => [ 'articles' => $articles ]
         return view('article.index', compact('articles'));
     }
+
+    public function create()
+    {
+        // Передаем в шаблон вновь созданный объект. Он нужен для вывода формы
+        $article = new Article();
+        return view('article.create', compact('article'));
+    }
 }
