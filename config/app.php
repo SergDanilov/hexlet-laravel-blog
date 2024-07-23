@@ -125,8 +125,7 @@ return [
     
     'aliases' => [
     // Other aliases
-    'Form' => Collective\Html\FormFacade::class,
-    'Html' => Collective\Html\HtmlFacade::class,
+    'Html' => Spatie\Html\Facades\Html::class,
     ],
 
 ];
