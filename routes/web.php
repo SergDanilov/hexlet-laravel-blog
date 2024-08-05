@@ -12,6 +12,7 @@ Route::get('/', function () {
 Route::get('about', [PageController::class, 'about'])
 	->name('about');
 
+
 Route::get('articles/create', 'ArticleController@create')
   ->name('articles.create');
 
@@ -21,5 +22,12 @@ Route::get('articles', [ArticleController::class, 'index'])
 Route::post('articles', 'ArticleController@store')
   ->name('articles.store');
 
+
+Route::get('articles_categories/create', 'ArticleCategoryController@create')
+  ->name('article_categories.create');
+
 Route::get('articles_categories',[ArticleCategoryController::class, 'index'])
 	->name('article_categories.index');
+
+Route::post('articles_categories', 'ArticleCategoryController@store')
+  ->name('articles_categories.store');
