@@ -7,13 +7,12 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::paginate();
-
-        // Статьи передаются в шаблон
-        // compact('articles') => [ 'articles' => $articles ]
-        return view('article.index', compact('articles'));
+        $q = $request->input('q');
+        // Like has huge impact on the performance. Use them carefully. Learn indexes and full text search.
+        $articles = $q ? Article::where('name', 'ilike', "%{$q}%")->paginate() : Article::paginate();
+        return view('article.index', compact('articles', 'q'));
     }
 
     public function create()
