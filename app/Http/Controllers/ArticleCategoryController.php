@@ -26,7 +26,7 @@ class ArticleCategoryController extends Controller
         // Если будут ошибки, то возникнет исключение
         // Иначе возвращаются данные формы
         $data = $this->validate($request, [
-            'name_category' => 'required|unique:article_categories',
+            'article_category' => 'required|unique:article_categories',
             'body' => 'required|max:250',
         ]);
 
