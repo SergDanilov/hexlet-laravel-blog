@@ -11,7 +11,6 @@ class Article extends Model
     
     protected $fillable = [
         'name',
-        'email',
-        'password',
+        'body',
     ];
 }
