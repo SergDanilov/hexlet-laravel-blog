@@ -7,10 +7,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('about', function () {
-    $tags = ['обучение', 'программирование', 'php', 'oop'];
-    return view('about', ['tags' => $tags]);
-});
+Route::get('about', ['PageController::class', 'about'])
+	->name('about');
 
 Route::get('articles/create', 'ArticleController@create')
   ->name('articles.create');
