@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ArticleCategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,3 +20,6 @@ Route::get('articles', [ArticleController::class, 'index'])
 
 Route::post('articles', 'ArticleController@store')
   ->name('articles.store');
+
+Route::get('articles_categories',[ArticleCategoryController::class, 'index'])
+	->name('article_categories.index');
