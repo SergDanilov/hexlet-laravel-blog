@@ -7,6 +7,6 @@
         <div>{{Str::limit($article->body, 200)}}</div>
     @endforeach
 @endsection
-<h2><a href="article/create.blade.php">Создать статью</a></h2>
+<h2><a href="{{ route('articles.create') }}">Создать статью</a></h2>
 
 
