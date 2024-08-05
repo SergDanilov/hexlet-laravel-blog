@@ -7,12 +7,6 @@
         <div>{{Str::limit($article->body, 200)}}</div>
     @endforeach
 @endsection
-<h2>Создать статью</h2>
-{{ html()->modelForm($article, 'POST', route('articles.store'))->open() }}
-    {{  html()->label('Имя', 'name') }}
-    {{  html()->input('text', 'name') }}
-    {{  html()->label('Содержание', 'body') }}
-    {{  html()->textarea('body') }}
-    {{ html()->submit('Save') }}
-{{ html()->closeModelForm() }}
+<h2><a href="article/create.blade.php">Создать статью</a></h2>
+
 
